@@ -2,14 +2,10 @@
 @import 'reset';
 
 :root {
-  --color-primary: #26265e;
-  --color-primary-faded: rgba(38, 38, 94, 0.2);
-  --color-gray-primary: #e7e7e7;
-  --color-gray-dark: #565656;
-  --color-attention: #fa5f1c;
-
-  --color-input-valid: rgb(37, 217, 37);
-  --color-input-has-error: rgb(217, 48, 37);
+  --color-primary: #1B1B1B;
+  --color-primary-faded: rgba(27, 27, 27, 0.2);
+  --color-gray-primary: #8f93a0;
+  --color-gray-faded: #eee;
 
   --border-radius: 10px;
   --grid-grap: 40px;
@@ -21,6 +17,8 @@ body,
   height: 100vh; /* fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
   scroll-behavior: smooth;
+
+  background: var(--color-primary);
 }
 
 body,

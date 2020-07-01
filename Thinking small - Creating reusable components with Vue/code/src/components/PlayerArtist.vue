@@ -1,7 +1,9 @@
 <template>
   <Container>
     <div class="player-artist">
-      <ButtonOptions color="#fff" />
+      <ContextMenuClickableArea :options="contextOptions">
+        <ButtonOptions color="#fff" />
+      </ContextMenuClickableArea>
 
       <img
         class="banner"
@@ -9,8 +11,14 @@
         alt="Artist Banner"
       />
 
-      <h1 class="name">{{ name }}</h1>
-      <small class="followers">{{ followers }} Listeners</small>
+      <div class="details">
+        <div class="info">
+          <h1 class="name">{{ name }}</h1>
+          <small class="followers">{{ followers }} Listeners</small>
+        </div>
+
+        <ButtonFollow />
+      </div>
     </div>
   </Container>
 </template>
@@ -18,10 +26,17 @@
 <script>
 import Container from '@/components/Container'
 import ButtonOptions from '@/components/ButtonOptions'
+import ButtonFollow from '@/components/ButtonFollow'
+import ContextMenuClickableArea from '@/components/ContextMenuClickableArea'
 
 export default {
   name: 'PlayerArtist',
-  components: { Container, ButtonOptions },
+  components: {
+    Container,
+    ButtonOptions,
+    ButtonFollow,
+    ContextMenuClickableArea,
+  },
   props: {
     name: {
       type: String,
@@ -31,6 +46,13 @@ export default {
       type: String,
       required: true,
     },
+  },
+
+  created() {
+    this.contextOptions = [
+      { label: 'Follow Artist', action: () => ({}) },
+      { label: 'Share', action: () => ({}) },
+    ]
   },
 }
 </script>
@@ -48,17 +70,22 @@ export default {
     border-radius: var(--border-radius);
   }
 
-  > .name {
-    margin: rem(24px 0 8px);
+  > .details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: rem(18px 0 8px);
 
-    font-size: rem(22px);
-    line-height: 1.3;
-    color: var(--color-primary);
-  }
+    .name {
+      font-size: rem(22px);
+      line-height: 1.3;
+      color: var(--color-primary);
+    }
 
-  > .followers {
-    font-size: rem(15px);
-    color: var(--color-gray-primary);
+    .followers {
+      font-size: rem(15px);
+      color: var(--color-gray-primary);
+    }
   }
 }
 </style>

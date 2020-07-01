@@ -19,26 +19,11 @@ import PlayerMusic from '@/components/PlayerMusic'
 export default {
   name: 'PlayerQueue',
   components: { Container, PlayerMusic },
-
-  created() {
-    this.musics = [
-      {
-        name: 'Parasite Eve',
-        artist: 'Bring Me the Horizon',
-      },
-      {
-        name: `Don't Rush`,
-        artist: 'Harrison First, AIYA',
-      },
-      {
-        name: 'Waterfalls',
-        artist: 'LVNDVN',
-      },
-      {
-        name: 'You Got It',
-        artist: 'Vory',
-      },
-    ]
+  props: {
+    musics: {
+      type: Array,
+      required: true,
+    },
   },
 }
 </script>

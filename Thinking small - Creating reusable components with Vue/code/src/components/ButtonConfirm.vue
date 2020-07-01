@@ -3,10 +3,8 @@
     :class="{ 'button-confirm': clickedTimes >= 1 }"
     @click="increaseClickTimes"
   >
-    <template>
-      <IconAttention v-if="clickedTimes >= 1" color="#fa5f1c" />
-      {{ currentLabel }}
-    </template>
+    <IconAttention v-if="clickedTimes >= 1" color="#fa5f1c" />
+    {{ currentLabel }}
   </button>
 </template>
 

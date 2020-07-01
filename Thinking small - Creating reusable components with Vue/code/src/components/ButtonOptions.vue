@@ -1,6 +1,6 @@
 <template>
   <button class="button-options" v-on="$listeners">
-    <IconOptions size="30" color="#1B1B1B" />
+    <IconOptions size="30" :color="color" />
   </button>
 </template>
 
@@ -9,6 +9,12 @@ import { IconOptions } from '@/components/icons'
 
 export default {
   components: { IconOptions },
+  props: {
+    color: {
+      type: String,
+      default: '#1B1B1B',
+    },
+  },
 }
 </script>
 

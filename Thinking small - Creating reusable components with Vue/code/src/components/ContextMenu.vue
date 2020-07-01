@@ -2,8 +2,8 @@
   <div class="contex-menu-list" :style="positionStyles">
     <component
       class="option"
-      v-for="(option, index) in options"
       :key="index"
+      v-for="(option, index) in options"
       :is="option.component ? option.component : DEFAULT_COMPONENT"
       v-bind="option.component && option.props"
       @click="!option.component && handleAction(option.action)"
@@ -20,7 +20,6 @@ export default {
     position: {
       type: Object,
       required: true,
-      // TODO: create validator
     },
     options: {
       type: Array,
@@ -84,7 +83,7 @@ export default {
   border-radius: var(--border-radius);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 
-  .option {
+  > .option {
     all: unset;
     display: block;
     max-width: 100%;
@@ -97,7 +96,7 @@ export default {
     transition: background 100ms ease;
 
     &:hover {
-      background: var(--color-gray-primary);
+      background: var(--color-gray-faded);
     }
   }
 }

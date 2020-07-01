@@ -13,6 +13,16 @@ export default {
     options: {
       type: Array,
       required: true,
+      validator(options) {
+        const receivedProps = options.map((option) => {
+          if (typeof option !== 'object') return false
+          return (
+            ('label' in option && 'action' in option) || 'component' in option
+          )
+        })
+
+        return !receivedProps.some((prop) => prop === false)
+      },
     },
   },
   methods: {

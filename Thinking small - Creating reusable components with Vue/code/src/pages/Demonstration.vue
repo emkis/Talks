@@ -1,21 +1,28 @@
 <template>
   <div id="demonstration">
-    <Title>Player artist</Title>
-    <PlayerArtist />
+    <h2 class="title">Player artist</h2>
+    <PlayerArtist name="Dr. Lylly Isabella" followers="6.2M" />
 
-    <Title>Player queue</Title>
-    <PlayerQueue />
+    <h2 class="title">Player queue</h2>
+    <PlayerQueue :musics="musics" />
   </div>
 </template>
 
 <script>
-import Title from '@/components/Title'
 import PlayerQueue from '@/components/PlayerQueue'
 import PlayerArtist from '@/components/PlayerArtist'
 
 export default {
   name: 'Demonstration',
-  components: { Title, PlayerQueue, PlayerArtist },
+  components: { PlayerQueue, PlayerArtist },
+  created() {
+    this.musics = [
+      { name: 'Parasite Eve', artist: 'Bring Me the Horizon' },
+      { name: `Don't Rush`, artist: 'Harrison First, AIYA' },
+      { name: 'Waterfalls', artist: 'LVNDVN' },
+      { name: 'You Got It', artist: 'Vory' },
+    ]
+  },
 }
 </script>
 

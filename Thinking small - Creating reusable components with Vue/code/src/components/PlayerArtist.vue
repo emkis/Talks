@@ -1,7 +1,7 @@
 <template>
   <Container>
     <div class="player-artist">
-      <ButtonOptions />
+      <ButtonOptions color="#fff" />
 
       <img
         class="banner"
@@ -9,8 +9,8 @@
         alt="Artist Banner"
       />
 
-      <h1 class="name">Dr. Lylly Isabella</h1>
-      <small class="followers">6.2M Listeners</small>
+      <h1 class="name">{{ name }}</h1>
+      <small class="followers">{{ followers }} Listeners</small>
     </div>
   </Container>
 </template>
@@ -22,6 +22,16 @@ import ButtonOptions from '@/components/ButtonOptions'
 export default {
   name: 'PlayerArtist',
   components: { Container, ButtonOptions },
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+    followers: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 

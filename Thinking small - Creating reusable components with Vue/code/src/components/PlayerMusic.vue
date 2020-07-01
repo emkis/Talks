@@ -7,16 +7,22 @@
       <p class="artist">{{ artist }}</p>
     </div>
 
-    <ButtonOptions />
+    <ContextMenuClickableArea :options="contextOptions">
+      <ButtonOptions />
+    </ContextMenuClickableArea>
   </div>
 </template>
 
 <script>
+import { ContextMenuBus } from '@/eventBus'
+
+import ContextMenuClickableArea from '@/components/ContextMenuClickableArea'
 import ButtonOptions from '@/components/ButtonOptions'
+import ButtonConfirm from '@/components/ButtonConfirm'
 
 export default {
   name: 'PlayerMusic',
-  components: { ButtonOptions },
+  components: { ContextMenuClickableArea, ButtonOptions },
   props: {
     id: {
       type: String,
@@ -34,6 +40,29 @@ export default {
       type: Number,
       required: true,
     },
+  },
+  created() {
+    const playMusic = () => {
+      alert(`Playing ${this.name}...`)
+    }
+
+    const navigateToArtist = () => {
+      alert(`Opening ${this.artist} page...`)
+    }
+
+    const removeFromLiked = () => {
+      alert(`Removing from Liked ${this.name}...`)
+      ContextMenuBus.$emit('@context-menu/CLOSE')
+    }
+
+    this.contextOptions = [
+      { label: 'Play Music', action: playMusic },
+      { label: 'Go to Artist', action: navigateToArtist },
+      {
+        component: ButtonConfirm,
+        props: { label: 'Remove from Liked', confirmAction: removeFromLiked },
+      },
+    ]
   },
 }
 </script>

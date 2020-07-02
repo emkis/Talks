@@ -12,19 +12,14 @@
   --grid-grap: 40px;
 }
 
-html,
-body,
-#app {
-  height: 100vh; /* fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+html {
   scroll-behavior: smooth;
-
-  background: var(--color-primary);
 }
 
 body,
 #app {
   min-height: 100%;
+  background: var(--color-primary);
 }
 
 #app {
@@ -33,7 +28,6 @@ body,
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
 }
 
 h1,

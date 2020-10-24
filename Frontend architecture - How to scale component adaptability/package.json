@@ -1,15 +1,20 @@
 {
   "name": "frontend-architecture",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
   "scripts": {
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "commit": "git-cz"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "Frontend architecture - How to scale component adaptability/node_modules/cz-conventional-changelog"
     }
   },
   "dependencies": {
@@ -24,6 +29,8 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.12.0",
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^7.1.0",

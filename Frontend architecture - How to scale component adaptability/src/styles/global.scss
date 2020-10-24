@@ -9,12 +9,11 @@ html, body {
 
 #app {
   min-height: 100%;
-}
-
-#app {
+  padding: 80px 0;
   font-family: $font-body;
   font-weight: 400;
   color: var(--c-tuna);
+  background: linear-gradient(150deg, var(--c-link-water), var(--c-cadet-blue));
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

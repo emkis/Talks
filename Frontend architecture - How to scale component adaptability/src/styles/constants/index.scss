@@ -1,5 +1,7 @@
-// helpers
 @import '~sass-rem';
 
-// constants
-@import 'typography';
+$font_body: 'Roboto', Helvetica, Arial, sans-serif;
+$font_title: 'Ubuntu', 'Roboto', Helvetica, Arial, sans-serif;
+
+$radius-box: 14px;
+$radius-button: $radius-box / 2;

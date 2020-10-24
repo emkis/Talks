@@ -1,12 +1,37 @@
 <template>
-  <button class="BaseButton" v-on="$listeners">
+  <button
+    class="BaseButton"
+    :class="{ 'BaseButton--outlined': isOutlined }"
+    v-on="$listeners"
+  >
     <slot />
   </button>
 </template>
 
 <script>
+const themesEnum = Object.freeze({
+  DEFAULT: 'default',
+  OUTLINED: 'outlined',
+})
+
+function isThemeValid(themeName) {
+  return Object.values(themesEnum).includes(themeName)
+}
+
 export default {
   name: 'BaseButton',
+  props: {
+    theme: {
+      type: String,
+      default: themesEnum.DEFAULT,
+      validator: isThemeValid,
+    },
+  },
+  computed: {
+    isOutlined() {
+      return this.theme === themesEnum.OUTLINED
+    },
+  },
 }
 </script>
 
@@ -28,6 +53,12 @@ export default {
 
   &:hover {
     opacity: 0.9;
+  }
+
+  &--outlined {
+    border: 2px solid var(--c-cadet-blue);
+    color: var(--c-tuna);
+    background: var(--c-white-lilac);
   }
 }
 </style>

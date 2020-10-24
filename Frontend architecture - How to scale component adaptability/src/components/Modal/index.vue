@@ -75,12 +75,17 @@ export default {
 
   &__container {
     position: relative;
-    max-width: 500px;
-    max-height: 80%;
-    padding: rem(33px);
+    margin: 13px;
     background: #fff;
     border-radius: $radius-box;
-    z-index: 31231;
+  }
+
+  &__body {
+    max-width: 500px;
+    max-height: 80vh;
+    padding: rem(33px);
+    overflow: auto;
+    overscroll-behavior: contain;
   }
 }
 </style>

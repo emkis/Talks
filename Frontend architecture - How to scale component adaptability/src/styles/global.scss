@@ -1,0 +1,29 @@
+@import '~normalize.css';
+
+@import 'reset';
+@import './constants/colors.css';
+
+html, body {
+  height: 100%;
+}
+
+#app {
+  min-height: 100%;
+}
+
+#app {
+  font-family: $font-body;
+  font-weight: 400;
+  color: var(--c-tuna);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-title;
+}

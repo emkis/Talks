@@ -62,7 +62,7 @@ export default {
   height: 100%;
   display: grid;
   place-items: center;
-  background: rgba(#0000, 0.53);
+  background: rgba(#000, 0.53);
   z-index: 1;
 
   &__exit-btn {
@@ -76,14 +76,13 @@ export default {
   &__container {
     position: relative;
     margin: 13px;
-    background: #fff;
     border-radius: $radius-box;
+    overflow: hidden;
   }
 
   &__body {
     max-width: 500px;
     max-height: 80vh;
-    padding: rem(33px);
     overflow: auto;
     overscroll-behavior: contain;
   }

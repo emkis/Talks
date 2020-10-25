@@ -1,3 +1,3 @@
-export function asyncDelay(ms = 700) {
+export function asyncDelay(ms = 1000) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }

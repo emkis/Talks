@@ -1,27 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ProfileContainer />
+    <ModalContainer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProfileContainer from '@/components/Profile/ProfileContainer'
+import ModalContainer from '@/components/Modal/ModalContainer'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-  },
+  components: { ProfileContainer, ModalContainer },
 }
 </script>
-
-<style lang="scss">
-#app {
-  img {
-    display: inline-block;
-  }
-  text-align: center;
-  padding-top: 60px;
-}
-</style>

@@ -52,11 +52,12 @@ export default {
   },
   methods: {
     handleAddFriend() {
-      const handler = () => (this.isFriendAdded = true)
-
       openModal({
         component: FriendActions,
-        props: { type: typesEnum.ADD_FRIEND, handler },
+        props: {
+          type: typesEnum.ADD_FRIEND,
+          handler: () => (this.isFriendAdded = true),
+        },
       })
     },
     handleBlockFriend() {
@@ -66,11 +67,12 @@ export default {
       })
     },
     handleUnfriend() {
-      const handler = () => (this.isFriendAdded = false)
-
       openModal({
         component: FriendActions,
-        props: { type: typesEnum.UNFRIEND, handler },
+        props: {
+          type: typesEnum.UNFRIEND,
+          handler: () => (this.isFriendAdded = false),
+        },
       })
     },
   },

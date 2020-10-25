@@ -10,19 +10,18 @@
     <span class="Profile__alias">@emkis</span>
 
     <div class="Profile__actions">
-      <BaseButton @click="handleAddFriend" :class="{ isFriendAdded }">
+      <BaseButton v-on="friendButtonListener" :class="{ isFriendAdded }">
         <span v-if="isFriendAdded">✅️ Added</span>
         <span v-else>👋️ Add friend</span>
       </BaseButton>
 
-      <template v-if="isFriendAdded">
-        <ButtonCircle title="Remove friend" @click="handleUnfriend">
-          💩️
-        </ButtonCircle>
-        <ButtonCircle title="Block friend" @click="handleBlockFriend">
-          👹️
-        </ButtonCircle>
-      </template>
+      <ButtonCircle
+        v-if="isFriendAdded"
+        title="Block friend"
+        @click="handleBlockFriend"
+      >
+        👹️
+      </ButtonCircle>
     </div>
   </div>
 </template>
@@ -42,6 +41,14 @@ export default {
     return {
       isFriendAdded: false,
     }
+  },
+  computed: {
+    friendButtonListener() {
+      const defaultListeners = { click: this.handleAddFriend }
+      const unfriendListeners = { click: this.handleUnfriend }
+
+      return this.isFriendAdded ? unfriendListeners : defaultListeners
+    },
   },
   methods: {
     handleAddFriend() {

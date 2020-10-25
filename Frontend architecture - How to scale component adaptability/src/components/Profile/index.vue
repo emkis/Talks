@@ -10,13 +10,19 @@
     <span class="Profile__alias">@emkis</span>
 
     <div class="Profile__actions">
-      <BaseButton @click="handleAddFriend">👋️ Add friend</BaseButton>
-      <ButtonCircle title="Remove friend" @click="handleUnfriend">
-        💩️
-      </ButtonCircle>
-      <ButtonCircle title="Block friend" @click="handleBlockFriend">
-        👹️
-      </ButtonCircle>
+      <BaseButton @click="handleAddFriend" :class="{ isFriendAdded }">
+        <span v-if="isFriendAdded">✅️ Added</span>
+        <span v-else>👋️ Add friend</span>
+      </BaseButton>
+
+      <template v-if="isFriendAdded">
+        <ButtonCircle title="Remove friend" @click="handleUnfriend">
+          💩️
+        </ButtonCircle>
+        <ButtonCircle title="Block friend" @click="handleBlockFriend">
+          👹️
+        </ButtonCircle>
+      </template>
     </div>
   </div>
 </template>
@@ -32,11 +38,18 @@ import FriendActions from '@/components/FriendActions'
 export default {
   name: 'Profile',
   components: { BaseButton, ButtonCircle },
+  data() {
+    return {
+      isFriendAdded: false,
+    }
+  },
   methods: {
     handleAddFriend() {
+      const handler = () => (this.isFriendAdded = true)
+
       openModal({
         component: FriendActions,
-        props: { type: typesEnum.ADD_FRIEND },
+        props: { type: typesEnum.ADD_FRIEND, handler },
       })
     },
     handleBlockFriend() {
@@ -46,9 +59,11 @@ export default {
       })
     },
     handleUnfriend() {
+      const handler = () => (this.isFriendAdded = false)
+
       openModal({
         component: FriendActions,
-        props: { type: typesEnum.UNFRIEND },
+        props: { type: typesEnum.UNFRIEND, handler },
       })
     },
   },
@@ -90,11 +105,15 @@ export default {
 
   &__actions {
     margin-top: rem(33px);
-
     display: flex;
 
     * + * {
       margin-left: rem(10px);
+    }
+
+    .isFriendAdded {
+      color: var(--c-tuna);
+      background: var(--c-link-water);
     }
   }
 }

@@ -12,3 +12,8 @@ All the resources used in the presentation are available in the **[resources](ht
 Below is a quick example of what I will show in this presentation to prove my point.
 
 <img alt="Project preview" title="Project preview" src="https://github.com/emkis/labs__talks/blob/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources/app-preview.gif?raw=true" />
+
+
+### :crocodile: Project diagram
+Simple diagram representing how the app is built.
+<img alt="Project preview" title="Project preview" src="https://github.com/emkis/labs__talks/blob/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources/App%20Diagram.png?raw=true" />

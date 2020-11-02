@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Frontend architecture" title="Frontend architecture" src="" />
+  <img alt="Frontend architecture" title="Frontend architecture" src="https://raw.githubusercontent.com/emkis/labs__talks/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources/Repo%20banner.jpg" />
 </h1>
 
 ### :calendar: Where will happen?
@@ -16,4 +16,5 @@ Below is a quick example of what I will show in this presentation to prove my po
 
 ### :crocodile: Project diagram
 Simple diagram representing how the app is built.
+
 <img alt="Project preview" title="Project preview" src="https://github.com/emkis/labs__talks/blob/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources/App%20Diagram.png?raw=true" />

@@ -3,7 +3,7 @@
 </h1>
 
 ### :calendar: Where will happen?
-**@UOL EdTech**, Oct 2020
+**@UOL EdTech**, Nov 2020
 
 ### :paperclip: Presentation resources
 All the resources used in the presentation are available in the **[resources](https://github.com/emkis/labs__talks/tree/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources)** folder and all the code I build is in **[code](https://github.com/emkis/labs__talks/tree/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/code)** folder.

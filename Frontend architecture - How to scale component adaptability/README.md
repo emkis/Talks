@@ -9,6 +9,8 @@
 All the resources used in the presentation are available in the **[resources](https://github.com/emkis/labs__talks/tree/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources)** folder and all the code I build is in **[code](https://github.com/emkis/labs__talks/tree/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/code)** folder.
 
 ### :eyes: Project preview
+You can access the **[live project here](https://vigorous-hugle-eae992.netlify.app)**.
+
 Below is a quick example of what I will show in this presentation to prove my point.
 
 <img alt="Project preview" title="Project preview" src="https://github.com/emkis/labs__talks/blob/master/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability/resources/app-preview.gif?raw=true" />

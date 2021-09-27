@@ -1,3 +1,5 @@
+English | [Portuguese](/README-pt.md)
+
 # Talks timeline :seedling:
 This is a place to centralize all the talks I gave and their resources. It's a great way to share and track my progress as a developer over time.
 

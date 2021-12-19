@@ -1,7 +1,9 @@
-[Inglês](/README.md) | Português
-
 # Linha do tempo de talks :seedling:
 Esse é um lugar para centralizar todas as talks que eu já fiz, e também seus materiais. É uma ótima forma de compartilhar e acompanhar meu progresso como desenvolvedor.
+
+## Idiomas disponíveis
+- Português (do Brasil)
+- [Inglês](/README.md)
 
 <br>
 

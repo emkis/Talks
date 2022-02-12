@@ -1,5 +1,5 @@
 # Talks timeline :seedling:
-This is a place to centralize all the talks that I've did and their resources. It's a great way to share and track my progress as a developer.
+This is a place to centralize all the talks that I've done and their resources. It's a great way to share and track my progress as a developer.
 
 ## Available languages
 - [Brazilian Portuguese](/README-pt.md)

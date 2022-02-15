@@ -7,6 +7,14 @@ Esse é um lugar para centralizar todas as talks que eu já fiz, e também seus 
 
 <br>
 
+## 2022
+
+### [Web Analytics: “Trackeando” eventos do usuário na web](https://github.com/emkis/Talks/tree/main/Web%20Analytics%20-%20Tracking%20user%20events%20on%20the%20web)
+
+> Fevereiro 2022 • Video em breve...
+
+Explicando o que são eventos de "tracking" e mostrando como a biblioteca Web Analytics lida com esses eventos.
+
 ## 2020
 
 ### [Arquitetura no Frontend: como escalar a adaptabilidade de componentes](https://github.com/emkis/Talks/tree/main/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability)

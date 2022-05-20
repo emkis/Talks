@@ -2,8 +2,11 @@
   <img alt="Frontend architecture" title="Frontend architecture" src="./resources/Repo%20banner.jpg" />
 </h1>
 
-### :calendar: Where will happen?
+### :calendar: Where did it happen?
 **@UOL EdTech**, Nov 2020
+
+### :cinema: [Video](https://youtu.be/gy_JZaXBykM)
+Watch this [talk on YouTube](https://youtu.be/gy_JZaXBykM)
 
 ### :paperclip: Presentation resources
 All the resources used in the presentation are available in the **resources** folder and all the code I build is in **code** folder.

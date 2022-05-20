@@ -11,7 +11,7 @@ This is a place to centralize all the talks that I've done and their resources. 
 
 ### [Web Analytics: tracking user events on the web](https://github.com/emkis/Talks/tree/main/Web%20Analytics%20-%20Tracking%20user%20events%20on%20the%20web)
 
-> February 2022 • Video coming...
+> February 2022 • No video
 
 Explaining what tracking events are, and showing how the library Web Analytics handles these events.
 

@@ -19,7 +19,7 @@ Explicando o que são eventos de "tracking" e mostrando como a biblioteca Web An
 
 ### [Arquitetura no Frontend: como escalar a adaptabilidade de componentes](https://github.com/emkis/Talks/tree/main/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability)
 
-> Novembro 2020 • [Video](https://youtu.be/gy_JZaXBykM) • [Projeto online](https://vigorous-hugle-eae992.netlify.app)
+> Novembro 2020 • [Video](https://youtu.be/LTtcE1-RYpo) • [Projeto online](https://vigorous-hugle-eae992.netlify.app)
 
 Uma aplicação de exemplo que mostra como criar componentes altamente customizaveis com o design pattern Factory.
 

@@ -20,7 +20,7 @@ Explaining what tracking events are, and showing how the library Web Analytics h
 
 ### [Frontend architecture: how to scale component adaptability](https://github.com/emkis/Talks/tree/main/Frontend%20architecture%20-%20How%20to%20scale%20component%20adaptability)
 
-> November 2020 • [Video](https://youtu.be/gy_JZaXBykM) • [Live project](https://vigorous-hugle-eae992.netlify.app)
+> November 2020 • [Video](https://youtu.be/LTtcE1-RYpo) • [Live project](https://vigorous-hugle-eae992.netlify.app)
 
 A sample application to show how to create highly customizable components with the factory pattern.
 

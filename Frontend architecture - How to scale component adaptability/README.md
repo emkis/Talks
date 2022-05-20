@@ -5,8 +5,8 @@
 ### :calendar: Where did it happen?
 **@UOL EdTech**, Nov 2020
 
-### :cinema: [Video](https://youtu.be/gy_JZaXBykM)
-Watch this [talk on YouTube](https://youtu.be/gy_JZaXBykM)
+### :cinema: [Video](https://youtu.be/LTtcE1-RYpo)
+Watch this [talk on YouTube](https://youtu.be/LTtcE1-RYpo)
 
 ### :paperclip: Presentation resources
 All the resources used in the presentation are available in the **resources** folder and all the code I build is in **code** folder.

@@ -9,6 +9,13 @@ This is a place to centralize all the talks that I've done and their resources. 
 
 ## 2022
 
+### [Web Architecture at Warren](https://github.com/emkis/Talks/tree/main/Web%20Architecture%20at%20Warren)
+
+> May 2022 • Video coming soon...
+
+I tell a little bit about the history of the `web-platform` project, which is Warren Brasil's investment platform on the Web. The purpose of this talk is to show how the architecture organization works within this project and talk about the reasons for choosing it. I tell about previous problems that we faced, and how they used to impact the Web Chapter.
+
+
 ### [Web Analytics: tracking user events on the web](https://github.com/emkis/Talks/tree/main/Web%20Analytics%20-%20Tracking%20user%20events%20on%20the%20web)
 
 > February 2022 • No video

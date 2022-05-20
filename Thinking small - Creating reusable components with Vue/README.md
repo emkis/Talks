@@ -1,8 +1,8 @@
 <h1 align="center">
-  <img alt="Thinking small" title="Thinking small" src="https://raw.githubusercontent.com/emkis/labs__talks/master/Thinking%20small%20-%20Creating%20reusable%20components%20with%20Vue/resources/github-banner.jpg" />
+  <img alt="" aria-hidden="true" src="./resources/github-banner.jpg" />
 </h1>
 
-### :calendar: Where will happen?
+### :calendar: Where did it happen?
 **@UOL EdTech**, Jul 2020
 
 ### :cinema: [Video](https://youtu.be/gy_JZaXBykM)
@@ -14,4 +14,4 @@ All the resources used in the presentation are available in the **resources** fo
 ### :eyes: Project preview
 Just a quick look on what i gonna show in this talk.
 
-<img alt="Project preview" title="Project preview" src="https://raw.githubusercontent.com/emkis/labs__talks/master/Thinking%20small%20-%20Creating%20reusable%20components%20with%20Vue/resources/project-preview.png" />
+<img alt="" aria-hidden="true" src="./resources/project-preview.png" />

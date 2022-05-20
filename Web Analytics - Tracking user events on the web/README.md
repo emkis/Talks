@@ -1,6 +1,4 @@
-<h1 align="center">
-  <img src="https://github.com/emkis/Talks/blob/main/Web%20Analytics%20-%20Tracking%20user%20events%20on%20the%20web/resources/Repo%20banner.jpg?raw=true" />
-</h1>
+<img alt="" aria-hidden="true" src="./resources/Repo%20banner.jpg" />
 
 ### :calendar: Where did it happen?
 **@Me Salva!**, Fev 2022

@@ -6,5 +6,5 @@
 ### :paperclip: Presentation resources
 All the resources used in the presentation are available in the **resources** folder.
 
-### :cinema: Video
-Coming soon...
+### :cinema: [Video](https://www.youtube.com/watch?v=wicMQTRVtL0)
+Watch this [talk on YouTube](https://www.youtube.com/watch?v=wicMQTRVtL0)

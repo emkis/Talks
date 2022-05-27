@@ -10,7 +10,7 @@ Esse é um lugar para centralizar todas as talks que eu já fiz, e também seus 
 ## 2022
 ### [Arquitetura dos projetos Web na Warren](https://github.com/emkis/Talks/tree/main/Web%20Architecture%20at%20Warren)
 
-> Maio 2022 • Video em breve...
+> Maio 2022 • [Video](https://www.youtube.com/watch?v=wicMQTRVtL0)
 
 Conto um pouco da história do projeto `web-platform`, que é a plataforma de investimento da Warren Brasil na Web. O objetivo dessa talk, é mostrar como funciona a organização dentro desse projeto e falar os motivos de escolha dessa organização. Trago problemas constantes que existiam, e o como eles impactavam na Chapter Web.
 

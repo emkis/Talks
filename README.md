@@ -7,6 +7,14 @@ This is a place to centralize all the talks that I've done and their resources. 
 
 <br>
 
+## 2023
+
+### [Using React Query to improve User Experience on products](https://github.com/emkis/Talks/tree/main/React%20Query)
+
+> Fev 2023 • Coming...
+
+Description on the future...
+
 ## 2022
 
 ### [Web Architecture at Warren](https://github.com/emkis/Talks/tree/main/Web%20Architecture%20at%20Warren)

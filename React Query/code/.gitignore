@@ -11,6 +11,8 @@ node_modules
 dist
 dist-ssr
 *.local
+.DS_Store
+.netlify
 
 # Editor directories and files
 .vscode/*

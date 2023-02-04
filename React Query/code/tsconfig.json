@@ -22,6 +22,6 @@
       "@pages/*": ["pages/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "serverless"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

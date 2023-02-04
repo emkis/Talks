@@ -19,7 +19,8 @@
     "paths": {
       "@shared/*": ["shared/*"],
       "@entries/*": ["entries/*"],
-      "@pages/*": ["pages/*"]
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"]
     }
   },
   "include": ["src", "serverless"],

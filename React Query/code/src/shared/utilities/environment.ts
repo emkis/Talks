@@ -5,6 +5,6 @@ export const environment = {
   /** Whether the app is running in production */
   isProduction: import.meta.env.PROD,
 
-  /** Key for authenticate with Supabase */
-  supabaseKey: import.meta.env.VITE_SUPABASE_KEY,
+  /** Internal API for this application */
+  internalApiUrl: import.meta.env.VITE_INTERNAL_API_URL,
 } as const

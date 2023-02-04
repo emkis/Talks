@@ -1,6 +1,14 @@
 [build]
   command = "yarn build"
 
+# Mapping the serverless functions to `/api`
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# THIS RULE NEEDS TO BE THE LAST ONE! It's the wild card
+# Necessary as this app is an SPA and has only one HTML file
 [[redirects]]
   from = "/*"
   to = "/index.html"

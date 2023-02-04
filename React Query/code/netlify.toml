@@ -5,4 +5,5 @@
 
 [functions]
   directory = "serverless"
+  node_bundler = "esbuild"
   external_node_modules = ["@supabase/supabase-js"]

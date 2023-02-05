@@ -3,18 +3,22 @@ import { Sidebar } from '@shared/components/Sidebar'
 import { Link } from 'react-router-dom'
 import {
   HomeIcon,
-  PieChartIcon,
   LayersIcon,
   PersonIcon,
   Component2Icon,
-  Crosshair1Icon,
   LockOpen1Icon,
 } from '@radix-ui/react-icons'
-import { usePermissions } from '@pages/permissions/queries/permissions'
+import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 import { AddButton } from '@shared/components/AddButton'
 
 export function SidebarLayout({ children }: WithChildren) {
-  const isProjectsEnabled = usePermissions(['read:projects', 'create:projects'])
+  const isDashboardGranted = usePermissions(['read:dashboard'])
+  const isProjectsGranted = usePermissions(['read:projects', 'create:projects'])
+  const isUsersGranted = usePermissions(['read:users'])
+  const isPermissionsGranted = usePermissions(['read:permissions'])
+
+  const permissionsQuery = usePermissionsQuery()
+  const totalPermissions = permissionsQuery.data?.length
 
   return (
     <div className="grid grid-cols-[300px_1fr]">
@@ -29,43 +33,49 @@ export function SidebarLayout({ children }: WithChildren) {
             </Link>
           </Sidebar.Item>
 
-          <Sidebar.Item>
-            <Component2Icon width={22} height={22} aria-hidden />
-            <span>Dashboard</span>
+          <Sidebar.Item asChild>
+            <Link to="/dashboard">
+              {isDashboardGranted ? <Component2Icon width={22} height={22} aria-hidden /> : '👎'}
+              <span>Dashboard</span>
+            </Link>
           </Sidebar.Item>
 
-          {isProjectsEnabled && (
-            <Sidebar.Item>
-              <LayersIcon width={22} height={22} aria-hidden />
+          <Sidebar.Item asChild>
+            <Link to="/projects">
+              {isProjectsGranted ? <LayersIcon width={22} height={22} aria-hidden /> : '👎'}
               <span>Projects</span>
-            </Sidebar.Item>
-          )}
-
-          <Sidebar.Item>
-            <Crosshair1Icon width={22} height={22} aria-hidden />
-            <div className="flex w-full justify-between">
-              <span>Tasks</span>
-              <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
-                15
-              </span>
-            </div>
+            </Link>
           </Sidebar.Item>
 
-          <Sidebar.Item>
-            <PieChartIcon width={22} height={22} aria-hidden />
-            <span>Reporting</span>
-          </Sidebar.Item>
-
-          <Sidebar.Item>
-            <PersonIcon width={22} height={22} aria-hidden />
-            <span>Users</span>
+          <Sidebar.Item asChild>
+            <Link to="/users">
+              {isUsersGranted ? <PersonIcon width={22} height={22} aria-hidden /> : '👎'}
+              <span>Users</span>
+            </Link>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
             <Link to="/permissions">
-              <LockOpen1Icon width={22} height={22} aria-hidden />
-              <span>Permissions</span>
+              {isPermissionsGranted ? <LockOpen1Icon width={22} height={22} aria-hidden /> : '👎'}
+              <div className="flex w-full justify-between">
+                <span>Permissions</span>
+                {totalPermissions ? (
+                  <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
+                    {totalPermissions}
+                  </span>
+                ) : null}
+              </div>
             </Link>
+          </Sidebar.Item>
+
+          <Sidebar.Item>
+            <span>👎</span>
+            <span>Tasks</span>
+          </Sidebar.Item>
+
+          <Sidebar.Item>
+            <span>👎</span>
+            <span>Reporting</span>
           </Sidebar.Item>
         </Sidebar.ItemsGroup>
 

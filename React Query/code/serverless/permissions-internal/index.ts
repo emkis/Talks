@@ -4,7 +4,7 @@ import { defaultHeaders } from '../shared/utilities/headers'
 
 const permissions = {
   create: ['create:projects', 'create:user', 'create:permissions'] as const,
-  read: ['read:projects', 'read:user', 'read:permissions'] as const,
+  read: ['read:projects', 'read:user', 'read:permissions', 'read:users', 'read:dashboard'] as const,
   update: ['update:projects', 'update:user'] as const,
   all: () => [...permissions.create, ...permissions.read, ...permissions.update],
 }

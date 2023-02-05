@@ -4,6 +4,7 @@ import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 export function Permissions() {
   const isPermissionsGranted = usePermissions(['create:permissions'])
   const permissionsQuery = usePermissionsQuery()
+  const sortedPermissions = permissionsQuery.data?.sort()
 
   return (
     <section>
@@ -16,7 +17,7 @@ export function Permissions() {
       </div>
 
       <ul className="grid gap-2 py-8">
-        {permissionsQuery.data?.map((permission, permissionIndex) => (
+        {sortedPermissions?.map((permission, permissionIndex) => (
           <li
             key={permissionIndex}
             className="max-w-md rounded-xl border-2 border-gray-400 p-3 font-mono text-lg font-bold text-gray-800"

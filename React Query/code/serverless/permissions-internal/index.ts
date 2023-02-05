@@ -24,7 +24,7 @@ async function resetAllPermissions() {
 
 async function defaultPermissions() {
   await resetAllPermissions()
-  await Promise.all(permissions.all().sort().map(insertPermission))
+  await Promise.all(permissions.all().map(insertPermission))
   return { allGood: true }
 }
 

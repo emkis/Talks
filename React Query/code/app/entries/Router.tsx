@@ -5,7 +5,6 @@ import {
   RouterProvider as ReactRouterProvider,
 } from 'react-router-dom'
 import { SidebarLayout } from '@layouts/sidebar'
-import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
 
@@ -20,15 +19,27 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Home />,
+        element: <h1 className="text-4xl font-bold text-black">Home page 🍎</h1>,
       },
       {
-        path: '/internal',
-        element: <Internal />,
+        path: '/dashboard',
+        element: <h1 className="text-4xl font-bold text-black">Dashboard page 🐣</h1>,
+      },
+      {
+        path: '/projects',
+        element: <h1 className="text-4xl font-bold text-black">Projects page 💥</h1>,
+      },
+      {
+        path: '/users',
+        element: <h1 className="text-4xl font-bold text-black">Users page 🐝</h1>,
       },
       {
         path: '/permissions',
         element: <Permissions />,
+      },
+      {
+        path: '/internal',
+        element: <Internal />,
       },
     ],
   },

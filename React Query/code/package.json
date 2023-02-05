@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@netlify/functions": "^1.4.0",
+    "@radix-ui/react-icons": "^1.1.1",
     "@supabase/supabase-js": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

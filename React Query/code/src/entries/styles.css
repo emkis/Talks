@@ -4,4 +4,5 @@
 
 #root {
   @apply min-h-screen;
+  @apply bg-gray-100;
 }

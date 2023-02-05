@@ -9,7 +9,7 @@ export function Permissions() {
     <section>
       <div className="flex justify-between">
         <h1 className="text-4xl font-bold text-black">
-          Permissions
+          Permissions 💅
           <small className="text-sm">{permissionsQuery.isFetching ? '(updating...)' : null}</small>
         </h1>
         {isPermissionsGranted && <AddButton className="text-slate-800" />}

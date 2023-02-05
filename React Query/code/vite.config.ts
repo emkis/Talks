@@ -10,6 +10,7 @@ export default defineConfig({
       '@shared': resolve(__dirname, '/app/shared'),
       '@entries': resolve(__dirname, '/app/entries'),
       '@pages': resolve(__dirname, '/app/pages'),
+      '@router': resolve(__dirname, '/app/router'),
     },
   },
 })

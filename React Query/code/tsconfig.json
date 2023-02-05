@@ -20,6 +20,8 @@
       "@shared/*": ["app/shared/*"],
       "@entries/*": ["app/entries/*"],
       "@pages/*": ["app/pages/*"],
+      "@router": ["app/router/index.ts"],
+      "@router/*": ["app/router/*"],
     }
   },
   "include": ["app", "serverless"],

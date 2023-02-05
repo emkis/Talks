@@ -1,4 +1,4 @@
-import { Sidebar } from '@components/Sidebar'
+import { Sidebar } from '@shared/components/Sidebar'
 
 export function Home() {
   return (

@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
+    "baseUrl": "./app",
     "paths": {
       "@shared/*": ["shared/*"],
       "@entries/*": ["entries/*"],
@@ -23,6 +23,6 @@
       "@components/*": ["components/*"]
     }
   },
-  "include": ["src", "serverless"],
+  "include": ["app", "serverless"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

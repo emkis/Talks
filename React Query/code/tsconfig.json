@@ -21,8 +21,9 @@
       "@entries/*": ["app/entries/*"],
       "@pages/*": ["app/pages/*"],
       "@layouts/*": ["app/layouts/*"],
+      "@server-types/*": ["server-types/*"],
     }
   },
-  "include": ["app", "serverless"],
+  "include": ["app", "serverless", "server-types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

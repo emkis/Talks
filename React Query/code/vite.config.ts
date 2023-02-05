@@ -11,6 +11,7 @@ export default defineConfig({
       '@entries': resolve(__dirname, '/app/entries'),
       '@pages': resolve(__dirname, '/app/pages'),
       '@layouts': resolve(__dirname, '/app/layouts'),
+      '@server-types': resolve(__dirname, '/server-types'),
     },
   },
 })

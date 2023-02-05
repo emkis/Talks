@@ -104,7 +104,7 @@ export function SidebarLayout({ children }: WithChildren) {
         </section>
       </Sidebar.Root>
 
-      <main className="py-8 px-12">{children}</main>
+      <main className="py-8 px-14">{children}</main>
     </div>
   )
 }

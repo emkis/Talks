@@ -11,6 +11,9 @@ module.exports = {
     react: {
       version: 'detect',
     },
+    tailwindcss: {
+      callees: ['cn'],
+    },
     'import/resolver': {
       node: {
         paths: ['src'],

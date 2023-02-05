@@ -15,12 +15,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./app",
+    "baseUrl": "./",
     "paths": {
-      "@shared/*": ["shared/*"],
-      "@entries/*": ["entries/*"],
-      "@pages/*": ["pages/*"],
-      "@components/*": ["components/*"]
+      "@shared/*": ["app/shared/*"],
+      "@entries/*": ["app/entries/*"],
+      "@pages/*": ["app/pages/*"],
     }
   },
   "include": ["app", "serverless"],

@@ -7,10 +7,9 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@shared': resolve(__dirname, '/src/shared'),
-      '@entries': resolve(__dirname, '/src/entries'),
-      '@pages': resolve(__dirname, '/src/pages'),
-      '@components': resolve(__dirname, '/src/components'),
+      '@shared': resolve(__dirname, '/app/shared'),
+      '@entries': resolve(__dirname, '/app/entries'),
+      '@pages': resolve(__dirname, '/app/pages'),
     },
   },
 })

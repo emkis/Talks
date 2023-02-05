@@ -1,5 +1,5 @@
-import { Home } from '@pages/home'
+import { RouterProvider } from '@router'
 
 export function Root() {
-  return <Home />
+  return <RouterProvider />
 }

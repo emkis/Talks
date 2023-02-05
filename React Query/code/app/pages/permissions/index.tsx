@@ -2,7 +2,7 @@ import { AddButton } from '@shared/components/AddButton'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 
 export function Permissions() {
-  const isPermissionsGranted = usePermissions(['create:permissions'])
+  const isCreationGranted = usePermissions(['create:permissions'])
   const permissionsQuery = usePermissionsQuery()
   const sortedPermissions = permissionsQuery.data?.sort()
 
@@ -13,7 +13,7 @@ export function Permissions() {
           Permissions 💅
           <small className="text-sm">{permissionsQuery.isFetching ? '(updating...)' : null}</small>
         </h1>
-        {isPermissionsGranted ? (
+        {isCreationGranted ? (
           <AddButton className="text-slate-800" />
         ) : (
           <span className="text-3xl">👎</span>

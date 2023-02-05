@@ -59,11 +59,9 @@ export function SidebarLayout({ children }: WithChildren) {
               {isPermissionsGranted ? <LockOpen1Icon width={22} height={22} aria-hidden /> : '👎'}
               <div className="flex w-full justify-between">
                 <span>Permissions</span>
-                {totalPermissions ? (
-                  <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
-                    {totalPermissions}
-                  </span>
-                ) : null}
+                <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
+                  {totalPermissions ?? 0}
+                </span>
               </div>
             </Link>
           </Sidebar.Item>
@@ -79,29 +77,31 @@ export function SidebarLayout({ children }: WithChildren) {
           </Sidebar.Item>
         </Sidebar.ItemsGroup>
 
-        <section className="mt-auto">
-          <header className="flex items-center justify-between py-3">
-            <span className="text-sm text-white">Projects</span>
-            <AddButton />
-          </header>
+        {isProjectsGranted && (
+          <section className="mt-auto">
+            <header className="flex items-center justify-between py-3">
+              <span className="text-sm text-white">Projects</span>
+              <AddButton />
+            </header>
 
-          <Sidebar.ItemsGroup>
-            <Sidebar.Item>
-              <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
-              <span>Marketing site 2.0</span>
-            </Sidebar.Item>
-            <Sidebar.Item>
-              <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
-              <span>Platform redesign</span>
-            </Sidebar.Item>
-            <Sidebar.Item asChild>
-              <Link to="/internal">
+            <Sidebar.ItemsGroup>
+              <Sidebar.Item>
                 <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
-                <span>Waitlist pages</span>
-              </Link>
-            </Sidebar.Item>
-          </Sidebar.ItemsGroup>
-        </section>
+                <span>Marketing site 2.0</span>
+              </Sidebar.Item>
+              <Sidebar.Item>
+                <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
+                <span>Platform redesign</span>
+              </Sidebar.Item>
+              <Sidebar.Item asChild>
+                <Link to="/internal">
+                  <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
+                  <span>Waitlist pages</span>
+                </Link>
+              </Sidebar.Item>
+            </Sidebar.ItemsGroup>
+          </section>
+        )}
       </Sidebar.Root>
 
       <main className="py-8 px-14">{children}</main>

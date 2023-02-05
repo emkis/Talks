@@ -7,6 +7,7 @@ export type Permission =
   | 'update:user'
   | 'create:permissions'
   | 'read:permissions'
+  | 'read:dashboard'
 
 export type Permissions = {
   name: Permission

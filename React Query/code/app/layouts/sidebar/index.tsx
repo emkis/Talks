@@ -14,7 +14,7 @@ import { AddButton } from '@shared/components/AddButton'
 export function SidebarLayout({ children }: WithChildren) {
   const isDashboardGranted = usePermissions(['read:dashboard'])
   const isProjectsGranted = usePermissions(['read:projects', 'create:projects'])
-  const isUsersGranted = usePermissions(['read:users'])
+  const isUserGranted = usePermissions(['read:user'])
   const isPermissionsGranted = usePermissions(['read:permissions'])
 
   const permissionsQuery = usePermissionsQuery()
@@ -49,7 +49,7 @@ export function SidebarLayout({ children }: WithChildren) {
 
           <Sidebar.Item asChild>
             <Link to="/users">
-              {isUsersGranted ? <PersonIcon width={22} height={22} aria-hidden /> : '👎'}
+              {isUserGranted ? <PersonIcon width={22} height={22} aria-hidden /> : '👎'}
               <span>Users</span>
             </Link>
           </Sidebar.Item>

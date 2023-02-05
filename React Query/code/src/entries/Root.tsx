@@ -1,5 +1,5 @@
 import { Home } from '@pages/home'
 
-export function App() {
+export function Root() {
   return <Home />
 }

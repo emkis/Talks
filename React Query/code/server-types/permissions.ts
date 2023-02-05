@@ -1,1 +1,1 @@
-export type { Permissions, PermissionsResponse } from '../serverless/permissions/types'
+export type { Permission, Permissions, PermissionsResponse } from '../serverless/permissions/types'

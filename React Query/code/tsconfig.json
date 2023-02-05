@@ -21,8 +21,6 @@
       "@entries/*": ["app/entries/*"],
       "@pages/*": ["app/pages/*"],
       "@layouts/*": ["app/layouts/*"],
-      "@router": ["app/router/index.ts"],
-      "@router/*": ["app/router/*"],
     }
   },
   "include": ["app", "serverless"],

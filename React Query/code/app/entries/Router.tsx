@@ -1,10 +1,10 @@
-import { createBrowserRouter, type RouteObject, Outlet } from 'react-router-dom'
+import { type RouteObject, createBrowserRouter, Outlet } from 'react-router-dom'
+import { SidebarLayout } from '@layouts/sidebar'
 import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
-import { SidebarLayout } from '@layouts/sidebar'
 
-export const routes: RouteObject[] = [
+const routes: RouteObject[] = [
   {
     path: '/',
     element: (

@@ -1,5 +1,6 @@
-import { RouterProvider } from '@router'
+import { RouterProvider } from 'react-router-dom'
+import { router } from './Router'
 
 export function Root() {
-  return <RouterProvider />
+  return <RouterProvider router={router} />
 }

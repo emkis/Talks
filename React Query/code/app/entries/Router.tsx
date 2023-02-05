@@ -1,4 +1,9 @@
-import { type RouteObject, createBrowserRouter, Outlet } from 'react-router-dom'
+import {
+  type RouteObject,
+  createBrowserRouter,
+  Outlet,
+  RouterProvider as ReactRouterProvider,
+} from 'react-router-dom'
 import { SidebarLayout } from '@layouts/sidebar'
 import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
@@ -30,3 +35,7 @@ const routes: RouteObject[] = [
 ]
 
 export const router = createBrowserRouter(routes)
+
+export function RouterProvider() {
+  return <ReactRouterProvider router={router} />
+}

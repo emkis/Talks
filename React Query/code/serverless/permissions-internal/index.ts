@@ -23,11 +23,13 @@ async function resetAllPermissions() {
 }
 
 async function defaultPermissions() {
+  await resetAllPermissions()
   await Promise.all(permissions.all().sort().map(insertPermission))
   return { allGood: true }
 }
 
 async function readPermissionsOnly() {
+  await resetAllPermissions()
   await Promise.all(permissions.read.map(insertPermission))
   return { allGood: true }
 }

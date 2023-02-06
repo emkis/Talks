@@ -17,7 +17,6 @@ export function SidebarLayout({ children }: WithChildren) {
   const isDashboardGranted = usePermissions(['read:dashboard'])
   const isProjectsGranted = usePermissions(['read:projects', 'create:projects'])
   const isUserGranted = usePermissions(['read:user'])
-  const isPermissionsGranted = usePermissions(['read:permissions'])
 
   const permissionsQuery = usePermissionsQuery()
   const totalPermissions = permissionsQuery.data?.length
@@ -64,9 +63,7 @@ export function SidebarLayout({ children }: WithChildren) {
 
           <Sidebar.Item asChild>
             <Link to="/permissions">
-              <IsGranted granted={isPermissionsGranted}>
-                <LockOpen1Icon />
-              </IsGranted>
+              <LockOpen1Icon width={22} height={22} aria-hidden />
               <div className="flex w-full justify-between">
                 <span>Permissions</span>
                 <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">

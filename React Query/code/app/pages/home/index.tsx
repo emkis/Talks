@@ -23,7 +23,7 @@ function NotPayed() {
     <React.Fragment>
       <p className="text-xl text-gray-900">Hey 👋, welcome to this demo!</p>
       <p className="pb-8 text-xl text-gray-900">
-        You did not pay your subscription, we removed your access.
+        You did not pay your subscription, so we removed your permissions.
       </p>
       <Link
         to={'/payment'}

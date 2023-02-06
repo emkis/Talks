@@ -1,5 +1,4 @@
 import { AddButton } from '@shared/components/AddButton'
-import { ThumbsDown } from '@shared/components/ThumbsDown'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 
 export function Permissions() {
@@ -14,7 +13,7 @@ export function Permissions() {
           Permissions 💅
           <small className="text-sm">{permissionsQuery.isFetching ? '(updating...)' : null}</small>
         </h1>
-        {isCreationGranted ? <AddButton className="text-slate-800" /> : <ThumbsDown />}
+        {isCreationGranted ? <AddButton className="text-slate-800" /> : null}
       </div>
 
       <ul className="grid gap-2 py-8">

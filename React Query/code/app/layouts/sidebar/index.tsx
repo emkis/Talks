@@ -1,4 +1,5 @@
 import type { WithChildren } from '@shared/types/react'
+import * as React from 'react'
 import { Sidebar } from '@shared/components/Sidebar'
 import { Link } from 'react-router-dom'
 import {
@@ -10,6 +11,7 @@ import {
 } from '@radix-ui/react-icons'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 import { AddButton } from '@shared/components/AddButton'
+import { ThumbsDown } from '@shared/components/ThumbsDown'
 
 export function SidebarLayout({ children }: WithChildren) {
   const isDashboardGranted = usePermissions(['read:dashboard'])
@@ -35,28 +37,36 @@ export function SidebarLayout({ children }: WithChildren) {
 
           <Sidebar.Item asChild>
             <Link to="/dashboard">
-              {isDashboardGranted ? <Component2Icon width={22} height={22} aria-hidden /> : '👎'}
+              <IsGranted granted={isDashboardGranted}>
+                <Component2Icon />
+              </IsGranted>
               <span>Dashboard</span>
             </Link>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
             <Link to="/projects">
-              {isProjectsGranted ? <LayersIcon width={22} height={22} aria-hidden /> : '👎'}
+              <IsGranted granted={isProjectsGranted}>
+                <LayersIcon />
+              </IsGranted>
               <span>Projects</span>
             </Link>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
             <Link to="/users">
-              {isUserGranted ? <PersonIcon width={22} height={22} aria-hidden /> : '👎'}
+              <IsGranted granted={isUserGranted}>
+                <PersonIcon />
+              </IsGranted>
               <span>Users</span>
             </Link>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
             <Link to="/permissions">
-              {isPermissionsGranted ? <LockOpen1Icon width={22} height={22} aria-hidden /> : '👎'}
+              <IsGranted granted={isPermissionsGranted}>
+                <LockOpen1Icon />
+              </IsGranted>
               <div className="flex w-full justify-between">
                 <span>Permissions</span>
                 <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
@@ -67,12 +77,12 @@ export function SidebarLayout({ children }: WithChildren) {
           </Sidebar.Item>
 
           <Sidebar.Item>
-            <span>👎</span>
+            <ThumbsDown />
             <span>Tasks</span>
           </Sidebar.Item>
 
           <Sidebar.Item>
-            <span>👎</span>
+            <ThumbsDown />
             <span>Reporting</span>
           </Sidebar.Item>
         </Sidebar.ItemsGroup>
@@ -107,4 +117,9 @@ export function SidebarLayout({ children }: WithChildren) {
       <main className="py-8 px-14">{children}</main>
     </div>
   )
+}
+
+function IsGranted({ granted, children }: { granted: boolean; children: JSX.Element }) {
+  const IconWithProps = React.cloneElement(children, { width: 22, height: 22, 'aria-hidden': true })
+  return granted ? IconWithProps : <ThumbsDown />
 }

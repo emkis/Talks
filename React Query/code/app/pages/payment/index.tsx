@@ -1,13 +1,10 @@
 import * as React from 'react'
-
-type PaymentStatus = 'idle' | 'processing' | 'confirmed'
-
-function setPageTitle(title: string) {
-  document.title = title
-}
+import { updatePermissions } from '@shared/authorization'
 
 export function ProcessingPayment() {
-  const [paymentStatus, setPaymentStatus] = React.useState<PaymentStatus>('idle')
+  const [paymentStatus, setPaymentStatus] = React.useState<'idle' | 'processing' | 'confirmed'>(
+    'idle'
+  )
 
   React.useEffect(() => {
     const previousTitle = document.title
@@ -43,7 +40,10 @@ export function ProcessingPayment() {
 
       <button
         type="button"
-        onClick={startPayment}
+        onClick={() => {
+          updatePermissions('default')
+          startPayment()
+        }}
         className="inline-flex max-w-max cursor-pointer items-center rounded-md bg-gray-900 px-5 py-3 font-semibold leading-6 text-white shadow transition duration-150 ease-in-out"
       >
         {paymentStatus === 'idle' && (
@@ -69,4 +69,8 @@ export function ProcessingPayment() {
       </button>
     </main>
   )
+}
+
+function setPageTitle(title: string) {
+  document.title = title
 }

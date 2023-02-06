@@ -13,12 +13,13 @@ import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 import { AddButton } from '@shared/components/AddButton'
 import { ThumbsDown } from '@shared/components/ThumbsDown'
 
-const iconProps = { width: 24, height: 24, 'aria-hidden': true }
-
 export function SidebarLayout({ children }: WithChildren) {
+  const isHomeGranted = usePermissions(['read:home'])
   const isDashboardGranted = usePermissions(['read:dashboard'])
-  const isProjectsGranted = usePermissions(['read:projects', 'create:projects'])
+  const isProjectsReadGranted = usePermissions(['read:projects'])
+  const isProjectsCreateGranted = usePermissions(['create:projects'])
   const isUserGranted = usePermissions(['read:user'])
+  const isPermissionsGranted = usePermissions(['read:permissions'])
 
   const permissionsQuery = usePermissionsQuery()
   const totalPermissions = permissionsQuery.data?.length
@@ -31,7 +32,9 @@ export function SidebarLayout({ children }: WithChildren) {
         <Sidebar.ItemsGroup>
           <Sidebar.Item asChild>
             <NavLink to="/">
-              <HomeIcon width={22} height={22} aria-hidden />
+              <IsGranted granted={isHomeGranted}>
+                <HomeIcon />
+              </IsGranted>
               <span>Home</span>
             </NavLink>
           </Sidebar.Item>
@@ -47,7 +50,7 @@ export function SidebarLayout({ children }: WithChildren) {
 
           <Sidebar.Item asChild>
             <NavLink to="/projects">
-              <IsGranted granted={isProjectsGranted}>
+              <IsGranted granted={isProjectsReadGranted}>
                 <LayersIcon />
               </IsGranted>
               <span>Projects</span>
@@ -65,7 +68,9 @@ export function SidebarLayout({ children }: WithChildren) {
 
           <Sidebar.Item asChild>
             <NavLink to="/permissions">
-              <LockOpen1Icon {...iconProps} />
+              <IsGranted granted={isPermissionsGranted}>
+                <LockOpen1Icon />
+              </IsGranted>
               <div className="flex w-full justify-between">
                 <span>Permissions</span>
                 <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
@@ -86,25 +91,27 @@ export function SidebarLayout({ children }: WithChildren) {
           </Sidebar.Item>
         </Sidebar.ItemsGroup>
 
-        {isProjectsGranted && (
+        {isProjectsReadGranted && (
           <section className="mt-auto">
             <header className="flex items-center justify-between py-3">
               <span className="text-sm text-white">Projects</span>
-              <AddButton />
+              {isProjectsCreateGranted ? <AddButton /> : <ThumbsDown />}
             </header>
 
             <Sidebar.ItemsGroup>
               <Sidebar.Item>
-                <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
+                <div className="h-2 w-2 rounded-full bg-purple-400" aria-hidden />
                 <span>Marketing site 2.0</span>
               </Sidebar.Item>
+
               <Sidebar.Item>
-                <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
+                <div className="h-2 w-2 rounded-full bg-green-400" aria-hidden />
                 <span>Platform redesign</span>
               </Sidebar.Item>
+
               <Sidebar.Item asChild>
                 <NavLink to="/internal">
-                  <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
+                  <div className="h-2 w-2 rounded-full bg-orange-400" aria-hidden />
                   <span>Waitlist pages</span>
                 </NavLink>
               </Sidebar.Item>
@@ -119,6 +126,6 @@ export function SidebarLayout({ children }: WithChildren) {
 }
 
 function IsGranted({ granted, children }: { granted: boolean; children: JSX.Element }) {
-  const IconWithProps = React.cloneElement(children, iconProps)
+  const IconWithProps = React.cloneElement(children, { width: 24, height: 24, 'aria-hidden': true })
   return granted ? IconWithProps : <ThumbsDown />
 }

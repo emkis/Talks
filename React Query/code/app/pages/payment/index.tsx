@@ -2,8 +2,20 @@ import * as React from 'react'
 
 type PaymentStatus = 'idle' | 'processing' | 'confirmed'
 
+function setPageTitle(title: string) {
+  document.title = title
+}
+
 export function ProcessingPayment() {
   const [paymentStatus, setPaymentStatus] = React.useState<PaymentStatus>('idle')
+
+  React.useEffect(() => {
+    const previousTitle = document.title
+    const newTitle = `Payment on ${document.title}`
+
+    setPageTitle(newTitle)
+    return () => setPageTitle(previousTitle)
+  }, [])
 
   function startPayment() {
     setPaymentStatus('processing')

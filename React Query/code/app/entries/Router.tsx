@@ -5,8 +5,10 @@ import {
   RouterProvider as ReactRouterProvider,
 } from 'react-router-dom'
 import { SidebarLayout } from '@layouts/sidebar'
+import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
+import { ProcessingPayment } from '@pages/payment'
 
 const routes: RouteObject[] = [
   {
@@ -19,7 +21,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <h1 className="text-4xl font-bold text-black">Home page 🍎</h1>,
+        element: <Home />,
       },
       {
         path: '/dashboard',
@@ -42,6 +44,10 @@ const routes: RouteObject[] = [
         element: <Internal />,
       },
     ],
+  },
+  {
+    path: '/payment',
+    element: <ProcessingPayment />,
   },
 ]
 

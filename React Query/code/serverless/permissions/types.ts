@@ -1,4 +1,5 @@
 export type Permission =
+  | 'read:home'
   | 'create:projects'
   | 'read:projects'
   | 'update:projects'

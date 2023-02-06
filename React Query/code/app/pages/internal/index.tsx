@@ -1,15 +1,11 @@
-import { environment } from '@shared/utilities/environment'
+import {
+  updatePermissions,
+  type UpdatePermissionsOperation as Operation,
+} from '@shared/authorization'
 
-function sendOperation(operation: string) {
-  fetch(`${environment.internalApiUrl}/permissions-internal`, {
-    method: 'POST',
-    body: JSON.stringify({ operation }),
-  })
-}
+const operations: [Operation, Operation, Operation] = ['reset', 'default', 'readonly']
 
 export function Internal() {
-  const operations = ['reset', 'default', 'readonly', 'add-p', 'remove-p']
-
   return (
     <section className="grid gap-8">
       <h1 className="text-4xl font-bold text-black">Internal</h1>
@@ -20,7 +16,7 @@ export function Internal() {
             key={operation}
             className="flex h-12 w-full items-center justify-center rounded-lg bg-slate-900 px-6 font-semibold text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 sm:w-auto"
             type="button"
-            onClick={() => sendOperation(operation)}
+            onClick={() => updatePermissions(operation)}
           >
             {operation} permissions
           </button>

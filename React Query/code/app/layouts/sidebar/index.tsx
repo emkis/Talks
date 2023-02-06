@@ -1,7 +1,7 @@
 import type { WithChildren } from '@shared/types/react'
 import * as React from 'react'
 import { Sidebar } from '@shared/components/Sidebar'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import {
   HomeIcon,
   LayersIcon,
@@ -12,6 +12,8 @@ import {
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 import { AddButton } from '@shared/components/AddButton'
 import { ThumbsDown } from '@shared/components/ThumbsDown'
+
+const iconProps = { width: 24, height: 24, 'aria-hidden': true }
 
 export function SidebarLayout({ children }: WithChildren) {
   const isDashboardGranted = usePermissions(['read:dashboard'])
@@ -28,49 +30,49 @@ export function SidebarLayout({ children }: WithChildren) {
 
         <Sidebar.ItemsGroup>
           <Sidebar.Item asChild>
-            <Link to="/">
+            <NavLink to="/">
               <HomeIcon width={22} height={22} aria-hidden />
               <span>Home</span>
-            </Link>
+            </NavLink>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
-            <Link to="/dashboard">
+            <NavLink to="/dashboard">
               <IsGranted granted={isDashboardGranted}>
                 <Component2Icon />
               </IsGranted>
               <span>Dashboard</span>
-            </Link>
+            </NavLink>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
-            <Link to="/projects">
+            <NavLink to="/projects">
               <IsGranted granted={isProjectsGranted}>
                 <LayersIcon />
               </IsGranted>
               <span>Projects</span>
-            </Link>
+            </NavLink>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
-            <Link to="/users">
+            <NavLink to="/users">
               <IsGranted granted={isUserGranted}>
                 <PersonIcon />
               </IsGranted>
               <span>Users</span>
-            </Link>
+            </NavLink>
           </Sidebar.Item>
 
           <Sidebar.Item asChild>
-            <Link to="/permissions">
-              <LockOpen1Icon width={22} height={22} aria-hidden />
+            <NavLink to="/permissions">
+              <LockOpen1Icon {...iconProps} />
               <div className="flex w-full justify-between">
                 <span>Permissions</span>
                 <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
                   {totalPermissions ?? 0}
                 </span>
               </div>
-            </Link>
+            </NavLink>
           </Sidebar.Item>
 
           <Sidebar.Item>
@@ -101,10 +103,10 @@ export function SidebarLayout({ children }: WithChildren) {
                 <span>Platform redesign</span>
               </Sidebar.Item>
               <Sidebar.Item asChild>
-                <Link to="/internal">
+                <NavLink to="/internal">
                   <div className="h-2 w-2 rounded-full bg-white" aria-hidden />
                   <span>Waitlist pages</span>
-                </Link>
+                </NavLink>
               </Sidebar.Item>
             </Sidebar.ItemsGroup>
           </section>
@@ -117,6 +119,6 @@ export function SidebarLayout({ children }: WithChildren) {
 }
 
 function IsGranted({ granted, children }: { granted: boolean; children: JSX.Element }) {
-  const IconWithProps = React.cloneElement(children, { width: 22, height: 22, 'aria-hidden': true })
+  const IconWithProps = React.cloneElement(children, iconProps)
   return granted ? IconWithProps : <ThumbsDown />
 }

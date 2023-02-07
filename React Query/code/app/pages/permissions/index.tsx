@@ -8,16 +8,16 @@ export function Permissions() {
   const sortedPermissions = permissionsQuery.data?.sort()
 
   return (
-    <section className="max-w-md">
-      <div className="flex items-center justify-between">
+    <section className="grid max-w-md gap-10">
+      <header className="flex items-center justify-between">
         <Heading>
           Permissions 💅
           <small className="text-sm">{permissionsQuery.isFetching ? '(updating...)' : null}</small>
         </Heading>
         {isCreationGranted ? <AddButton className="text-slate-800" /> : null}
-      </div>
+      </header>
 
-      <ul className="grid gap-2 py-8">
+      <ul className="grid gap-3">
         {sortedPermissions?.map((permission, permissionIndex) => (
           <li
             key={permissionIndex}

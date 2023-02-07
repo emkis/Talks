@@ -30,13 +30,13 @@ export function ProcessingPayment() {
   }
 
   return (
-    <main className="m-auto max-w-3xl p-10">
+    <main className="m-auto grid max-w-3xl gap-10 p-10">
       <Heading>Payment page 🔥</Heading>
 
-      <section className="grid gap-2 py-8">
+      <article className="grid gap-2">
         <Text>This is just a fake external page to simulate a payment being made!</Text>
         <Text>No payment is actually happening, we are just updating the permissions 🦊</Text>
-      </section>
+      </article>
 
       <button
         type="button"
@@ -44,25 +44,25 @@ export function ProcessingPayment() {
           updatePermissions('readonly')
           startPayment()
         }}
-        className="inline-flex max-w-max cursor-pointer items-center rounded-md bg-gray-900 px-5 py-3 font-semibold leading-6 text-white shadow transition duration-150 ease-in-out"
+        className="inline-flex max-w-max cursor-pointer items-center rounded-md bg-gray-900 px-7 py-4 text-xl font-semibold leading-6 text-white shadow transition duration-150 ease-in-out"
       >
         {paymentStatus === 'idle' && (
           <React.Fragment>
-            <span className="mr-3 text-xl">💳</span>
+            <span className="mr-3">💳</span>
             <span>Start payment</span>
           </React.Fragment>
         )}
 
         {paymentStatus === 'processing' && (
           <React.Fragment>
-            <span className="mr-3 animate-spin text-xl">❄️</span>
+            <span className="mr-3 animate-spin">❄️</span>
             <span>Processing your payment...</span>
           </React.Fragment>
         )}
 
         {paymentStatus === 'confirmed' && (
           <React.Fragment>
-            <span className="mr-3 text-xl">✅</span>
+            <span className="mr-3">✅</span>
             <span>All good! Going back to previous page</span>
           </React.Fragment>
         )}

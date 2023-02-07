@@ -25,7 +25,7 @@ export function SidebarLayout({ children }: WithChildren) {
   const totalPermissions = permissionsQuery.data?.length
 
   return (
-    <div className="grid grid-cols-[300px_1fr]">
+    <div className="pl-[333px]">
       <Sidebar.Root>
         <Sidebar.Title>Untitled UI</Sidebar.Title>
 
@@ -71,7 +71,7 @@ export function SidebarLayout({ children }: WithChildren) {
               <IsGranted granted={isPermissionsGranted}>
                 <LockOpen1Icon />
               </IsGranted>
-              <div className="flex w-full justify-between">
+              <div className="flex w-full items-center justify-between">
                 <span>Permissions</span>
                 <span className="grid h-5 w-7 place-content-center rounded-full bg-slate-600 text-xs text-gray-200">
                   {totalPermissions ?? 0}
@@ -83,8 +83,8 @@ export function SidebarLayout({ children }: WithChildren) {
 
         {isProjectsReadGranted && (
           <section className="mt-auto">
-            <header className="flex items-center justify-between py-3">
-              <span className="text-sm text-white">Projects</span>
+            <header className="flex items-center justify-between pb-3">
+              <span className="text-base text-white">Projects</span>
               {isProjectsCreateGranted ? <AddButton /> : <ThumbsDown />}
             </header>
 

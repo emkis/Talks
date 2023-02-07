@@ -2,13 +2,14 @@ import {
   updatePermissions,
   type UpdatePermissionsOperation as Operation,
 } from '@shared/authorization'
+import { Heading } from '@shared/components/Heading'
 
 const operations: [Operation, Operation, Operation] = ['reset', 'default', 'readonly']
 
 export function Internal() {
   return (
     <section className="grid gap-8">
-      <h1 className="text-4xl font-bold text-black">Internal</h1>
+      <Heading>Internal page</Heading>
 
       {operations.map((operation) => {
         return (

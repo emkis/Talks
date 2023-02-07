@@ -1,5 +1,6 @@
 import { AddButton } from '@shared/components/AddButton'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
+import { Heading } from '@shared/components/Heading'
 
 export function Permissions() {
   const isCreationGranted = usePermissions(['create:permissions'])
@@ -9,10 +10,10 @@ export function Permissions() {
   return (
     <section className="max-w-md">
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl font-bold text-black">
+        <Heading>
           Permissions 💅
           <small className="text-sm">{permissionsQuery.isFetching ? '(updating...)' : null}</small>
-        </h1>
+        </Heading>
         {isCreationGranted ? <AddButton className="text-slate-800" /> : null}
       </div>
 

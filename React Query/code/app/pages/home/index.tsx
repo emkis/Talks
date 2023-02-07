@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { usePermissions } from '@shared/authorization'
 import { Text } from '@shared/components/Text'
+import { Heading } from '@shared/components/Heading'
 import { Link } from 'react-router-dom'
 
 export function Home() {
@@ -13,7 +14,7 @@ export function Home() {
 
   return (
     <section>
-      <h1 className="text-4xl font-bold text-black">Home page 🍎</h1>
+      <Heading>Home page 🍎</Heading>
       <section className="grid gap-2 py-8">{isReadGranted ? <Payed /> : <NotPayed />}</section>
     </section>
   )

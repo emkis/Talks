@@ -9,6 +9,7 @@ import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
 import { ProcessingPayment } from '@pages/payment'
+import { Heading } from '@shared/components/Heading'
 
 const routes: RouteObject[] = [
   {
@@ -25,15 +26,15 @@ const routes: RouteObject[] = [
       },
       {
         path: '/dashboard',
-        element: <h1 className="text-4xl font-bold text-black">Dashboard page 🐣</h1>,
+        element: <Heading>Dashboard page 🐣</Heading>,
       },
       {
         path: '/projects',
-        element: <h1 className="text-4xl font-bold text-black">Projects page 💥</h1>,
+        element: <Heading>Projects page 💥</Heading>,
       },
       {
         path: '/users',
-        element: <h1 className="text-4xl font-bold text-black">Users page 🐝</h1>,
+        element: <Heading>Users page 🐝</Heading>,
       },
       {
         path: '/permissions',

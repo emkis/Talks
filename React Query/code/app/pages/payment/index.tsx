@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { updatePermissions } from '@shared/authorization'
 import { Text } from '@shared/components/Text'
+import { Heading } from '@shared/components/Heading'
 
 export function ProcessingPayment() {
   const [paymentStatus, setPaymentStatus] = React.useState<'idle' | 'processing' | 'confirmed'>(
@@ -30,13 +31,11 @@ export function ProcessingPayment() {
 
   return (
     <main className="m-auto max-w-3xl p-10">
-      <h1 className="text-4xl font-bold text-black">Payment page 🔥</h1>
+      <Heading>Payment page 🔥</Heading>
 
       <section className="grid gap-2 py-8">
-        <Text>
-          This is a fake page to simulate a payment being processed! Nothing is really happening, I
-          just needed you to open a page in another tab 🫣
-        </Text>
+        <Text>This is just a fake external page to simulate a payment being made!</Text>
+        <Text>No payment is actually happening, we are just updating the permissions 🦊</Text>
       </section>
 
       <button

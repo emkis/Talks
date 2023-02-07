@@ -79,16 +79,6 @@ export function SidebarLayout({ children }: WithChildren) {
               </div>
             </NavLink>
           </Sidebar.Item>
-
-          <Sidebar.Item>
-            <ThumbsDown />
-            <span>Tasks</span>
-          </Sidebar.Item>
-
-          <Sidebar.Item>
-            <ThumbsDown />
-            <span>Reporting</span>
-          </Sidebar.Item>
         </Sidebar.ItemsGroup>
 
         {isProjectsReadGranted && (
@@ -109,11 +99,9 @@ export function SidebarLayout({ children }: WithChildren) {
                 <span>Platform redesign</span>
               </Sidebar.Item>
 
-              <Sidebar.Item asChild>
-                <NavLink to="/internal">
-                  <div className="h-2 w-2 rounded-full bg-orange-400" aria-hidden />
-                  <span>Waitlist pages</span>
-                </NavLink>
+              <Sidebar.Item>
+                <div className="h-2 w-2 rounded-full bg-orange-400" aria-hidden />
+                <span>Waitlist pages</span>
               </Sidebar.Item>
             </Sidebar.ItemsGroup>
           </section>

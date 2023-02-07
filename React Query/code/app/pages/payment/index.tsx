@@ -41,7 +41,7 @@ export function ProcessingPayment() {
       <button
         type="button"
         onClick={() => {
-          updatePermissions('default')
+          updatePermissions('readonly')
           startPayment()
         }}
         className="inline-flex max-w-max cursor-pointer items-center rounded-md bg-gray-900 px-5 py-3 font-semibold leading-6 text-white shadow transition duration-150 ease-in-out"

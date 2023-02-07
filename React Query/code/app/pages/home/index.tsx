@@ -21,7 +21,7 @@ export function Home() {
 }
 
 function Payed() {
-  return <Text>Now that you payed, everything is good ✨</Text>
+  return <Text>Now that you payed, everything is good 🤑</Text>
 }
 
 function NotPayed() {

@@ -6,5 +6,5 @@ type TextProps = WithChildren<{
 }>
 
 export function Text({ className, children }: TextProps) {
-  return <p className={cn('text-2xl leading-normal text-gray-900', className)}>{children}</p>
+  return <p className={cn('text-2xl leading-normal text-gray-800', className)}>{children}</p>
 }

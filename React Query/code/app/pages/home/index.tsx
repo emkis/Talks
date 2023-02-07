@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { usePermissions } from '@shared/authorization'
+import { Text } from '@shared/components/Text'
 import { Link } from 'react-router-dom'
 
 export function Home() {
@@ -18,13 +19,17 @@ export function Home() {
   )
 }
 
+function Payed() {
+  return <Text>Now that you payed, everything is good ✨</Text>
+}
+
 function NotPayed() {
   return (
     <React.Fragment>
-      <p className="text-xl text-gray-900">Hey 👋, welcome to this demo!</p>
-      <p className="pb-8 text-xl text-gray-900">
+      <Text>Hey 👋, welcome to this demo!</Text>
+      <Text className="pb-8">
         You did not pay your subscription, so we removed your permissions.
-      </p>
+      </Text>
       <Link
         to={'/payment'}
         target="_blank"
@@ -35,8 +40,4 @@ function NotPayed() {
       </Link>
     </React.Fragment>
   )
-}
-
-function Payed() {
-  return <p className="text-xl text-gray-900">Now that you payed, everything is good ✨</p>
 }

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { updatePermissions } from '@shared/authorization'
+import { Text } from '@shared/components/Text'
 
 export function ProcessingPayment() {
   const [paymentStatus, setPaymentStatus] = React.useState<'idle' | 'processing' | 'confirmed'>(
@@ -32,10 +33,10 @@ export function ProcessingPayment() {
       <h1 className="text-4xl font-bold text-black">Payment page 🔥</h1>
 
       <section className="grid gap-2 py-8">
-        <p className="text-xl text-gray-900">
+        <Text>
           This is a fake page to simulate a payment being processed! Nothing is really happening, I
           just needed you to open a page in another tab 🫣
-        </p>
+        </Text>
       </section>
 
       <button

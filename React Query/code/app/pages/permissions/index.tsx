@@ -25,7 +25,7 @@ export function Permissions() {
           >
             {permission.startsWith('create') && <span>🟢</span>}
             {permission.startsWith('read') && <span>🔵</span>}
-            {permission.startsWith('update') && <span>⚫️</span>} {permission}
+            <span>{permission}</span>
           </li>
         ))}
       </ul>

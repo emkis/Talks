@@ -8,6 +8,7 @@ import { SidebarLayout } from '@layouts/sidebar'
 import { Home } from '@pages/home'
 import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
+import { Users } from '@pages/users'
 import { ProcessingPayment } from '@pages/payment'
 import { Heading } from '@shared/components/Heading'
 
@@ -34,7 +35,7 @@ const routes: RouteObject[] = [
       },
       {
         path: '/users',
-        element: <Heading>Users page 🐝</Heading>,
+        element: <Users />,
       },
       {
         path: '/permissions',

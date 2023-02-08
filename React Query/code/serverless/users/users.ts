@@ -5,6 +5,7 @@ import { defaultHeaders } from '../shared/utilities/headers'
 export type User = {
   id: string
   name: string
+  email: string
 }
 
 function fetchUsers() {

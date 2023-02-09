@@ -1,4 +1,5 @@
 import { Heading } from '@shared/components/Heading'
+import { Loader } from '@shared/components/Loader'
 import { useUsersQuery } from './users-query'
 
 export function Users() {
@@ -8,7 +9,7 @@ export function Users() {
     <section className="grid max-w-md gap-10">
       <Heading>
         Users page 👨‍👨‍👧‍👦
-        <small className="text-sm">{usersQuery.isFetching ? '(updating...)' : null}</small>
+        <small className="text-sm">{usersQuery.isFetching ? ' (updating...)' : null}</small>
       </Heading>
 
       <ul className="grid gap-3">
@@ -19,6 +20,8 @@ export function Users() {
           </li>
         ))}
       </ul>
+
+      {usersQuery.isLoading ? <Loader /> : null}
     </section>
   )
 }

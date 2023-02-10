@@ -1,6 +1,7 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
+      readonly APP_URL: string
       readonly SUPABASE_KEY: string
       readonly SUPABASE_URL: string
     }

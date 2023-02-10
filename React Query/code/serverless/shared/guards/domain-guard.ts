@@ -1,7 +1,8 @@
 import type { FunctionGuard } from './with-guards'
+import { environment } from '../../shared/utilities/environment'
 
 export function getAllowedDomains(): Array<string> {
-  return ['emkis-react-query-talk.netlify.app', 'localhost:8888']
+  return [environment.appUrl]
 }
 
 export const isDomainAllowed: FunctionGuard = (event) => {

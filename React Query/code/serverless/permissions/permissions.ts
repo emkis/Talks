@@ -1,7 +1,8 @@
 import type { Handler } from '@netlify/functions'
+import type { Permissions, PermissionsResponse } from './types'
 import { supabase } from '../shared/client'
 import { defaultHeaders } from '../shared/utilities/headers'
-import { Permissions, PermissionsResponse } from './types'
+import { withGuards, isDomainAllowed } from '../shared/guards'
 
 function fetchPermissions() {
   return supabase.from('permissions').select('*')
@@ -11,7 +12,7 @@ function getPermissionId(permission: Permissions) {
   return permission.name
 }
 
-export const handler: Handler = async () => {
+const unguardedHandler: Handler = async () => {
   const permissionsResponse = await fetchPermissions()
   const parsedPermission = permissionsResponse.data?.map(getPermissionId)
   const response: PermissionsResponse | undefined = parsedPermission
@@ -22,3 +23,5 @@ export const handler: Handler = async () => {
     headers: defaultHeaders(),
   }
 }
+
+export const handler = withGuards(unguardedHandler, [isDomainAllowed])

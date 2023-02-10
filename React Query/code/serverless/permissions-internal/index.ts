@@ -1,6 +1,7 @@
 import type { Handler, HandlerEvent } from '@netlify/functions'
 import { supabase } from '../shared/client'
 import { defaultHeaders } from '../shared/utilities/headers'
+import { withGuards, isDomainAllowed } from '../shared/guards'
 
 const permissions = {
   defaults: ['read:home', 'read:permissions'] as const,
@@ -34,7 +35,7 @@ async function readPermissionsOnly() {
   return { allGood: true }
 }
 
-const handler: Handler = async (event: HandlerEvent) => {
+const unguardedHandler: Handler = async (event: HandlerEvent) => {
   const body = JSON.parse(event.body!)
 
   const operations = new Map([
@@ -53,4 +54,4 @@ const handler: Handler = async (event: HandlerEvent) => {
   }
 }
 
-export { handler }
+export const handler = withGuards(unguardedHandler, [isDomainAllowed])

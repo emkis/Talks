@@ -1,7 +1,7 @@
 import type { Handler, HandlerEvent } from '@netlify/functions'
 import { supabase } from '../shared/client'
 import { defaultHeaders } from '../shared/utilities/headers'
-import { withGuards, isDomainAllowed } from '../shared/guards'
+import { withGuards, isOriginAllowed } from '../shared/guards'
 
 const permissions = {
   defaults: ['read:home', 'read:permissions'] as const,
@@ -54,4 +54,4 @@ const unguardedHandler: Handler = async (event: HandlerEvent) => {
   }
 }
 
-export const handler = withGuards(unguardedHandler, [isDomainAllowed])
+export const handler = withGuards(unguardedHandler, [isOriginAllowed])

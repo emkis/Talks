@@ -1,7 +1,7 @@
 import type { Handler } from '@netlify/functions'
 import { supabase } from '../shared/client'
 import { defaultHeaders } from '../shared/utilities/headers'
-import { withGuards, isDomainAllowed } from '../shared/guards'
+import { withGuards, isOriginAllowed } from '../shared/guards'
 
 export type User = {
   id: string
@@ -24,4 +24,4 @@ const unguardedHandler: Handler = async () => {
   }
 }
 
-export const handler = withGuards(unguardedHandler, [isDomainAllowed])
+export const handler = withGuards(unguardedHandler, [isOriginAllowed])

@@ -2,7 +2,7 @@ import type { Handler } from '@netlify/functions'
 import type { Permissions, PermissionsResponse } from './types'
 import { supabase } from '../shared/client'
 import { defaultHeaders } from '../shared/utilities/headers'
-import { withGuards, isDomainAllowed } from '../shared/guards'
+import { withGuards, isOriginAllowed } from '../shared/guards'
 
 function fetchPermissions() {
   return supabase.from('permissions').select('*')
@@ -24,4 +24,4 @@ const unguardedHandler: Handler = async () => {
   }
 }
 
-export const handler = withGuards(unguardedHandler, [isDomainAllowed])
+export const handler = withGuards(unguardedHandler, [isOriginAllowed])

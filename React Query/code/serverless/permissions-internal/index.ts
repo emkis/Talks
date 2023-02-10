@@ -6,7 +6,7 @@ const permissions = {
   defaults: ['read:home', 'read:permissions'] as const,
   create: ['create:projects', 'create:user', 'create:permissions'] as const,
   read: ['read:projects', 'read:user', 'read:dashboard'] as const,
-  all: () => [...permissions.create, ...permissions.read],
+  all: () => [...permissions.create, ...permissions.read] as const,
 }
 
 function insertPermission(permission: string) {

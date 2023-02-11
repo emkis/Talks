@@ -10,8 +10,11 @@ import {
   LockOpen1Icon,
 } from '@radix-ui/react-icons'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
+import { Loader } from '@shared/components/Loader'
 import { AddButton } from '@shared/components/AddButton'
 import { ThumbsDown } from '@shared/components/ThumbsDown'
+import { useProjectsQuery } from '@pages/projects'
+import { cn } from '@shared/utilities/cn'
 
 export function SidebarLayout({ children }: WithChildren) {
   const isHomeGranted = usePermissions(['read:home'])
@@ -21,6 +24,7 @@ export function SidebarLayout({ children }: WithChildren) {
   const isUserGranted = usePermissions(['read:user'])
   const isPermissionsGranted = usePermissions(['read:permissions'])
 
+  const projectsQuery = useProjectsQuery({ limit: 3 })
   const permissionsQuery = usePermissionsQuery()
   const totalPermissions = permissionsQuery.data?.length
 
@@ -89,20 +93,13 @@ export function SidebarLayout({ children }: WithChildren) {
             </header>
 
             <Sidebar.ItemsGroup>
-              <Sidebar.Item>
-                <div className="h-2 w-2 rounded-full bg-purple-400" aria-hidden />
-                <span>Marketing site 2.0</span>
-              </Sidebar.Item>
-
-              <Sidebar.Item>
-                <div className="h-2 w-2 rounded-full bg-green-400" aria-hidden />
-                <span>Platform redesign</span>
-              </Sidebar.Item>
-
-              <Sidebar.Item>
-                <div className="h-2 w-2 rounded-full bg-orange-400" aria-hidden />
-                <span>Waitlist pages</span>
-              </Sidebar.Item>
+              {projectsQuery.isLoading && <Loader />}
+              {projectsQuery.data?.map((project, projectIndex) => (
+                <Sidebar.Item key={projectIndex}>
+                  <div className={cn('h-2 w-2 rounded-full', project.color)} aria-hidden />
+                  <span>{project.name}</span>
+                </Sidebar.Item>
+              ))}
             </Sidebar.ItemsGroup>
           </section>
         )}

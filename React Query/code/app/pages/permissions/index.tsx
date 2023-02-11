@@ -23,8 +23,8 @@ export function Permissions() {
             key={permissionIndex}
             className="rounded-xl border-2 border-gray-400 p-3 font-mono text-lg font-bold text-gray-800"
           >
-            {permission.startsWith('create') && <span>🟢</span>}
-            {permission.startsWith('read') && <span>🔵</span>}
+            {permission.startsWith('create') && <span>🟢 </span>}
+            {permission.startsWith('read') && <span>🔵 </span>}
             <span>{permission}</span>
           </li>
         ))}

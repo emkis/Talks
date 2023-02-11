@@ -10,7 +10,8 @@ import { Internal } from '@pages/internal'
 import { Permissions } from '@pages/permissions'
 import { Users } from '@pages/users'
 import { ProcessingPayment } from '@pages/payment'
-import { Heading } from '@shared/components/Heading'
+import { Dashboard } from '@pages/dashboard'
+import { Projects } from '@pages/projects'
 
 const routes: RouteObject[] = [
   {
@@ -27,11 +28,11 @@ const routes: RouteObject[] = [
       },
       {
         path: '/dashboard',
-        element: <Heading>Dashboard page 🐣</Heading>,
+        element: <Dashboard />,
       },
       {
         path: '/projects',
-        element: <Heading>Projects page 💥</Heading>,
+        element: <Projects />,
       },
       {
         path: '/users',

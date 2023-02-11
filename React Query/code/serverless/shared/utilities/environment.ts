@@ -7,7 +7,4 @@ export const environment = {
 
   /** Supabase database URL */
   supabaseUrl: process.env.SUPABASE_URL,
-
-  /** Application base URL */
-  appUrl: process.env.APP_URL,
 } as const

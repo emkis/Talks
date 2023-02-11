@@ -1,6 +1,7 @@
 import { AddButton } from '@shared/components/AddButton'
 import { usePermissions, usePermissionsQuery } from '@shared/authorization'
 import { Heading } from '@shared/components/Heading'
+import { Loader } from '@shared/components/Loader'
 
 export function Permissions() {
   const isCreationGranted = usePermissions(['create:permissions'])
@@ -29,6 +30,8 @@ export function Permissions() {
           </li>
         ))}
       </ul>
+
+      {permissionsQuery.isLoading ? <Loader /> : null}
     </section>
   )
 }

@@ -16,7 +16,7 @@ function useWidgetsQuery() {
   return useQuery({
     queryKey: ['dashboard', 'widgets'],
     queryFn: async () => {
-      await delay(2)
+      await delay(1)
       return fakeWidgets
     },
   })

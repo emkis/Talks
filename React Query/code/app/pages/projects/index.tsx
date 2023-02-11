@@ -18,7 +18,7 @@ export function useProjectsQuery({ limit }: { limit?: number } = {}) {
   return useQuery({
     queryKey: ['projects', limit],
     queryFn: async () => {
-      await delay(2)
+      await delay(1)
       return limit ? fakeProjects.slice(0, limit) : fakeProjects
     },
   })

@@ -9,7 +9,7 @@
 All resources used for the presentation are available in the **resources** folder and all the code is in **code** folder.
 
 ## :eyes: Project preview
-You can access the **[live project here](https://emkis-react-query-talk.netlify.app)**.
+You can access the [live project here](https://emkis-react-query-talk.netlify.app).
 
 ## Further reading
 - [React Query docs](https://tanstack.com/query/latest)

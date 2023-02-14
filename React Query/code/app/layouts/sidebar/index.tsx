@@ -31,7 +31,7 @@ export function SidebarLayout({ children }: WithChildren) {
   return (
     <div className="pl-[333px]">
       <Sidebar.Root>
-        <Sidebar.Title>Untitled UI</Sidebar.Title>
+        <Sidebar.Title>Untitled UI ⚡️</Sidebar.Title>
 
         <Sidebar.ItemsGroup>
           <Sidebar.Item asChild>

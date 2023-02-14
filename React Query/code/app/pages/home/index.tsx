@@ -14,7 +14,10 @@ export function Home() {
 
   return (
     <section className="grid gap-10">
-      <Heading>Home page 🍎</Heading>
+      <Heading>
+        Home page 🍎
+        <small className="text-lg"> (with React Query)</small>
+      </Heading>
       {isReadGranted ? <Payed /> : <NotPayed />}
     </section>
   )

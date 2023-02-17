@@ -11,9 +11,9 @@ This is a place to centralize all the talks that I've done and their resources. 
 
 ### [Using React Query to improve User Experience on products](https://github.com/emkis/Talks/tree/main/React%20Query)
 
-> Fev 2023 • Coming...
+> Fev 2023 • No video
 
-Description on the future...
+This talk was a beginner's introduction to React Query. The goal was to showcase some features of this tool and explain how they work behind the scenes.
 
 ## 2022
 
